@@ -1,4 +1,4 @@
-@model JourneyViewModel
+ï»¿@model JourneyViewModel
 @{
     ViewData["Title"] = "Journey";
 }
@@ -6,23 +6,23 @@
 <div class="text-center">
     @foreach (var item in Model.Journeys)
     {
-        <div class="bt-journey-item">
-            <div class="bt-row">
-                <div class="bt-time">
-                    <div class="time-item">
-                        <label>KALKIÞ</label>
-                        @item.ArrivalTime
-                    </div>
-                    <i class="fas fa-arrow-right"></i>
-                    <div class="time-item">
-                        <label>VARIÞ</label>
-                        @item.DepartureTime
-                    </div>
+    <div class="bt-journey-item">
+        <div class="bt-row">
+            <div class="bt-time">
+                <div class="time-item">
+                    <label>KALKIÅž</label>
+                    @item.ArrivalTime
                 </div>
-                <div class="bt-price">@item.Price</div>
+                <i class="fas fa-arrow-right"></i>
+                <div class="time-item">
+                    <label>VARIÅž</label>
+                    @item.DepartureTime
+                </div>
             </div>
-            <p class="locations">@item.Location</p>
+            <div class="bt-price">@item.Price</div>
         </div>
+        <p class="locations">@item.Location</p>
+    </div>
     }
 </div>
 
