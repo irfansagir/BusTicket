@@ -56,13 +56,11 @@ namespace BusTicket.UI.Controllers
             }
 
             _cookieService.Set("search-model", model, 1);
-            return RedirectToAction("Journey");
+            return RedirectToAction("Journey", model);
         }
 
-        public async Task<IActionResult> Journey()
+        public async Task<IActionResult> Journey(SearchViewModel searchModel)
         {
-            var searchModel = _cookieService.Get<SearchViewModel>("search-model");
-
             if (searchModel == null)
             {
                 return RedirectToAction("Index");
