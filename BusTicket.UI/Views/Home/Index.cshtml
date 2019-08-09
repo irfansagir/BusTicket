@@ -1,0 +1,58 @@
+﻿@model SearchViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <form method="post">
+        <div class="bt-form-group">
+            <div class="element-group">
+                <label>Nereden</label>
+                <div class="from-input-group">
+                    <i class="fas fa-map-marker-alt"></i>
+                    @Html.TextBoxFor(x => x.FromText, new { type = "search", placeholder = "Nereden", @class = "search-input-from" })
+                    @Html.ValidationMessageFor(x => x.FromText)
+                </div>
+            </div>
+            <div class="change">
+                <a href="javascript:void(0)" class="btn-change">
+                    <i class="fas fa-exchange-alt fa-rotate-90"></i>
+                </a>
+            </div>
+            <div class="element-group">
+                <label>Nereye</label>
+                <div class="from-input-group">
+                    <i class="fas fa-map-marker"></i>
+                    @Html.TextBoxFor(x => x.ToText, new { type = "search", placeholder = "Nereye", @class = "search-input-to" })
+                    @Html.ValidationMessageFor(x => x.ToText)
+                </div>
+            </div>
+        </div>
+
+        <div class="bt-form-group">
+            <div class="element-group date-element-group">
+                <label>Tarih</label>
+                <div class="from-input-group">
+                    <i class="far fa-calendar-alt"></i>
+                    @*<input type="text" placeholder="Nereye" />*@
+                    @Html.TextBoxFor(x => x.Date, "{0:yyyy-MM-dd}", new { type = "date" })
+                    @Html.ValidationMessageFor(x => x.Date)
+                </div>
+                <div class="date-buttons">
+                    <a href="javascript:void(0)" class="btn btn-today btn-danger">Bugün</a>
+                    <a href="javascript:void(0)" class="btn btn-tomorrow btn-outline-danger">Yarın</a>
+                </div>
+            </div>
+        </div>
+
+        @Html.HiddenFor(p => p.FromId)
+        @Html.HiddenFor(p => p.ToId)
+
+        <div class="bt-form-group" style="padding:12px 40px;">
+            <button type="submit" class="bt-btn btn-info btn-block btn" style="padding:10px; font-size:17px;">
+                Bileti Bul
+            </button>
+        </div>
+    </form>
+</div>

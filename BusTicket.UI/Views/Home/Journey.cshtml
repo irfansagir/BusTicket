@@ -1,0 +1,38 @@
+@model JourneyViewModel
+@{
+    ViewData["Title"] = "Journey";
+}
+
+<div class="text-center">
+    @foreach (var item in Model.Journeys)
+    {
+        <div class="bt-journey-item">
+            <div class="bt-row">
+                <div class="bt-time">
+                    <div class="time-item">
+                        <label>KALKIÞ</label>
+                        @item.ArrivalTime
+                    </div>
+                    <i class="fas fa-arrow-right"></i>
+                    <div class="time-item">
+                        <label>VARIÞ</label>
+                        @item.DepartureTime
+                    </div>
+                </div>
+                <div class="bt-price">@item.Price</div>
+            </div>
+            <p class="locations">@item.Location</p>
+        </div>
+    }
+</div>
+
+@section Header{
+    <a href="@Url.Action("Index","Home")" class="bt-previous">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+
+    <div class="bt-journey-header">
+        <div class="bt-title"> @Model.Title </div>
+        <div class="bt-subtitle"> @Model.SubTitle </div>
+    </div>
+}
