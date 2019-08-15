@@ -31,7 +31,7 @@ namespace BusTicket.UI.Services
             _responseCookie.Append(
                 key,
                 cookieValue,
-                new CookieOptions { Expires = DateTime.Now.AddYears(days) });
+                new CookieOptions { Expires = DateTime.Now.AddYears(days), IsEssential = true });
         }
     }
 }
